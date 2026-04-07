@@ -1,0 +1,171 @@
+body {
+    height: 100vh;
+    display: flex ;
+    justify-content: center;
+    align-items: center; /* center vertically */
+    background: url(Back.jpg);
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-size: cover;
+}
+
+/* Main form container (card) */
+.form-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    
+}
+
+.contact-form {
+    position: fixed;   /* stick to screen */
+    top: 20px;
+    left: 50px;
+}
+
+#contactInfo {
+    position: fixed;   /* so it appears like a popup */
+    top: 70px;
+    left: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    backdrop-filter: blur(10px);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+#contact {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    background-color: green;
+
+}
+
+
+h2{
+    font-size: 30px;
+}
+
+h3 {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    margin: 0;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+h3:hover {
+    color: skyblue;
+    transform: scale(1.1);
+}
+
+.logo {
+    display: block;        /* center the image */
+    margin: 0 auto 20px;   /* center horizontally + spacing below */
+    width: 80px;           /* adjust size as needed */
+    height: auto;          /* maintain aspect ratio */
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.logo:hover {
+    transform: scale(1.1);  /* subtle zoom on hover */
+    filter: brightness(1.2); /* brighten slightly */
+}
+
+/* Input wrapper */
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+    width: 90%;
+}
+
+
+/* Input field */
+.input-box input {
+    width: 100%;
+    padding: 14px 12px;
+    background-color: transparent;
+    border: 2px solid rgba(135, 206, 235, 0.5);
+    outline: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+.input-box input:focus {
+    border-color: skyblue;
+    box-shadow: 0 0 8px rgba(135, 206, 235, 0.6);
+}
+
+/* Label */
+.input-box label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-weight: bold;
+    pointer-events: none;
+    transition: 0.3s;
+    padding: 0 5px;
+}
+
+/* Floating animation */
+.input-box input:focus + label,
+.input-box input:valid + label {
+    top: -10px;
+    left: 8px;
+    font-size: 15px;
+    color: skyblue;
+}
+
+/* Optional button (professional look) */
+button {
+    width: 50%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: blue;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+button:hover {
+    
+    transform: scale(1.1);  /* subtle zoom on hover */
+    filter: brightness(1.1); 
+}
+
+#message {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+
+    opacity: 0;              /* hidden */
+    transition: opacity 0.5s ease;
+    margin-bottom: 1px;
+}
