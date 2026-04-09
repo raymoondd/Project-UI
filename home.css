@@ -1,0 +1,76 @@
+body {
+    text-align: center;
+    padding: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: none;
+}
+
+.contact-form {
+    position: fixed;   /* stick to screen */
+    top: 20px;
+    left: 50px;
+}
+
+button {
+    width: 50%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: blue;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+
+
+button:hover {
+    
+    transform: scale(1.1);  /* subtle zoom on hover */
+    filter: brightness(1.1); 
+}
+
+
+
+#contactInfo {
+    position: fixed;   /* so it appears like a popup */
+    top: 70px;
+    left: 20px;
+
+}
+
+
+#contact {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    background-color: green;
+
+}
+
+#back{
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: blue;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    width: 200px;
+    transition: 0.3s;
+    margin-top: 200px;
+
+}
+
+button:hover {
+    
+    transform: scale(1.1);  /* subtle zoom on hover */
+    filter: brightness(1.1); 
+}
