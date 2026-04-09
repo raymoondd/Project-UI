@@ -51,13 +51,12 @@ function login() {
 }
 
 function contact() {
-    
     const info = document.getElementById("contactInfo");
 
-    if (info.style.display === "none") {
-        info.style.display = "block";
-    } else {
+    if (info.style.display === "block") {
         info.style.display = "none";
+    } else {
+        info.style.display = "block";
     }
 }
 
