@@ -1,5 +1,5 @@
 // JS functions
-alert("Enter your name in both FIRST NAME & PASSWORD");
+alert("Enter your name in both FIRST NAME & PASSWORD in lower case");
 alert("If your first name and password matches to stored data it will proceed directly");
 
 function showAlert(text) {
