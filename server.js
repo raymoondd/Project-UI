@@ -1,4 +1,7 @@
 // JS functions
+alert("Enter your name in both FIRST NAME & PASSWORD");
+alert("If your first name and password matches to stored data it will proceed directly");
+
 function showAlert(text) {
     const alertBox = document.getElementById("customAlert");
     document.getElementById("alertText").textContent = text;
