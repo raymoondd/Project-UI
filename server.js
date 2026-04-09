@@ -1,6 +1,6 @@
 // JS functions
-alert("Enter your name in both FIRST NAME & PASSWORD in lower case");
-alert("If your first name and password matches to stored data it will proceed directly");
+alert("Enter your name in both FIRST NAME & PASSWORD in lowercase");
+alert("If your first name and password match the stored data, you will proceed directly.");
 
 function showAlert(text) {
     const alertBox = document.getElementById("customAlert");
