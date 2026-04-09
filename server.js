@@ -1,67 +1,48 @@
-// script.js
-
-// SHOW CUSTOM ALERT
+// JS functions
 function showAlert(text) {
     const alertBox = document.getElementById("customAlert");
-    const alertText = document.getElementById("alertText");
-
-    if (alertBox && alertText) {
-        alertText.textContent = text;
-        alertBox.style.display = "block";
-
-        // Auto-hide after 3 seconds
-        setTimeout(() => {
-            alertBox.style.display = "none";
-        }, 3000);
-    }
+    document.getElementById("alertText").textContent = text;
+    alertBox.style.display = "block";
 }
 
-// CLOSE ALERT (manual button)
 function closeAlert() {
-    const alertBox = document.getElementById("customAlert");
-    if (alertBox) alertBox.style.display = "none";
+    document.getElementById("customAlert").style.display = "none";
+
 }
 
-// LOGIN FUNCTION
+// Modified login function
 function login() {
-    const firstnameInput = document.getElementById("firstname");
-    const passwordInput = document.getElementById("password");
-    const message = document.getElementById("message");
+    let firstname = document.getElementById("firstname").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let message = document.getElementById("message");
 
-    if (!firstnameInput || !passwordInput || !message) return;
-
-    const firstname = firstnameInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    // Hardcoded users (replace with backend API if needed)
     const users = [
         { firstname: "raymond", password: "raymond" },
         { firstname: "tiffany", password: "tiffany" },
         { firstname: "jenina", password: "jenina" }
     ];
 
-    const validUser = users.some(user => 
+    const validUser = users.some(user =>
         user.firstname === firstname && user.password === password
     );
 
     if (validUser) {
-        // Success message
         message.style.color = "green";
         message.textContent = "Redirecting....";
         message.style.opacity = 1;
 
-        // Fade out message then redirect
         setTimeout(() => {
             message.style.opacity = 0;
             setTimeout(() => {
-                window.location.href = "./home.html";
+                window.location.href = "home.html";
             }, 500);
         }, 2000);
+
     } else {
-        // Invalid credentials
         message.style.color = "red";
         message.style.opacity = 1;
-        showAlert("Invalid Credentials!!");
+
+        showAlert("Invalid Credentials!!"); // custom alert
 
         setTimeout(() => {
             message.style.opacity = 0;
@@ -69,28 +50,14 @@ function login() {
     }
 }
 
-// CONTACT INFO TOGGLE
 function contact() {
+    
     const info = document.getElementById("contactInfo");
-    if (!info) return;
 
-    if (info.style.display === "block") {
-        info.style.display = "none";
-    } else {
+    if (info.style.display === "none") {
         info.style.display = "block";
+    } else {
+        info.style.display = "none";
     }
 }
 
-// OPTIONAL: Press Enter to login
-document.addEventListener("DOMContentLoaded", () => {
-    const firstnameInput = document.getElementById("firstname");
-    const passwordInput = document.getElementById("password");
-
-    [firstnameInput, passwordInput].forEach(input => {
-        if (input) {
-            input.addEventListener("keypress", function(event) {
-                if (event.key === "Enter") login();
-            });
-        }
-    });
-});
