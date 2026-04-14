@@ -1,12 +1,18 @@
 // JS functions
-alert("Enter your name in both FIRST NAME & PASSWORD in lowercase");
+//alert("Enter your name in both FIRST NAME & PASSWORD in lowercase");
 alert("If your first name and password match the stored data, you will proceed directly. For a better experience, please use a desktop or computer.");
 
-function showAlert(text) {
+function showAlert(html) {
     const alertBox = document.getElementById("customAlert");
-    document.getElementById("alertText").textContent = text;
+    document.getElementById("alertText").innerHTML = html;
     alertBox.style.display = "block";
 }
+
+
+showAlert(
+    'Enter your name in both <mark>FIRST NAME</mark> and <mark>PASSWORD</mark> in <span style="color:white;">lowercase</span>'
+);
+
 
 function closeAlert() {
     document.getElementById("customAlert").style.display = "none";
