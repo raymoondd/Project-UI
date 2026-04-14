@@ -1,76 +1,340 @@
+:root {
+    --bg-color: #f4f7f6;
+    --surface-color: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --primary-color: #4a90e2;
+    --primary-hover: #357abd;
+    --success-color: #48bb78;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+    --bg-color: #1a202c;
+    --surface-color: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #a0aec0;
+    --border-color: #4a5568;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    text-align: center;
-    padding: 100px;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: none;
-}
-
-.contact-form {
-    position: fixed;   /* stick to screen */
-    top: 20px;
-    left: 50px;
-}
-
-button {
-    width: 50%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: blue;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: var(--transition);
     font-size: 20px;
 }
 
-
-
-button:hover {
-    
-    transform: scale(1.1);  /* subtle zoom on hover */
-    filter: brightness(1.1); 
-}
-
-
-
-#contactInfo {
-    position: fixed;   /* so it appears like a popup */
-    top: 70px;
-    left: 20px;
-
-}
-
-
-#contact {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
-    padding: 15px;
-    color: white;
-    background-color: green;
-
-}
-
-#back{
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    background-color: blue;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    width: 200px;
-    transition: 0.3s;
-    margin-top: 200px;
-
 }
 
-button:hover {
+/* Typography & Header */
+.dashboard {
+    margin-bottom: 30px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.5rem; font-weight: 600; }
+h2 { font-size: 1.5rem; margin-bottom: 20px; color: var(--text-primary); }
+p { color: var(--text-secondary); }
+
+.quote-container {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/* Progress Bar */
+.progress-section {
+    background: var(--surface-color);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--success-color);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+.card {
+    background: var(--surface-color);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    transition: var(--transition);
+}
+
+/* Forms & Inputs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.0rem;
+    color: var(--text-secondary);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--surface-color);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.btn.primary:hover { background-color: var(--primary-hover); }
+
+.btn.outline {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn.outline:hover { background-color: var(--border-color); }
+
+/* Pomodoro */
+.timer-display {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary-color);
+    font-variant-numeric: tabular-nums;
+}
+.timer-status { text-align: center; margin-bottom: 20px; font-weight: 500; }
+.timer-controls { display: flex; gap: 10px; }
+.timer-controls .btn { flex: 1; }
+
+/* Timeline */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-item {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 4px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.task-item.active {
+    border-left-color: var(--primary-color);
+    background-color: rgba(74, 144, 226, 0.05);
+}
+
+.task-item.completed {
+    opacity: 0.6;
+    border-left-color: var(--success-color);
+}
+.task-item.completed .task-title {
+    text-decoration: line-through;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-title { font-weight: 600; }
+.task-time { font-size: 0.85rem; color: var(--text-secondary); }
+.task-desc { font-size: 0.9rem; }
+.category-badge {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+.task-actions button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+/* Toast Notifications */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.toast {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content { grid-template-columns: 1fr; }
+    .header-top { flex-direction: column; align-items: flex-start; gap: 15px; }
+}
+
+/* --- Responsive Base Grid --- */
+.main-content {
+    display: grid;
+    /* Default: Stack everything vertically for mobile */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+/* --- Media Query for Tablets and Desktops (768px and up) --- */
+@media (min-width: 768px) {
+    .main-content {
+        /* Change to two columns: Left (Task Planner) and Right (Sidebar) */
+        grid-template-columns: 1.5fr 1fr;
+        gap: 30px;
+    }
+
+    .header-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Make the Pomodoro timer font slightly larger on desktop */
+    .timer-display {
+        font-size: 5rem;
+    }
+}
+
+/* --- Fluid Layout Adjustments --- */
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px; /* Smaller padding for mobile screens */
+}
+
+@media (min-width: 1024px) {
+    .app-container {
+        padding: 40px; /* Generous breathing room for ultra-wide screens */
+    }
+}
+
+/* --- Form Responsiveness --- */
+@media (max-width: 480px) {
+    /* Stack Start and End time inputs on very small phones */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
     
-    transform: scale(1.1);  /* subtle zoom on hover */
-    filter: brightness(1.1); 
+    .header-top h1 {
+        font-size: 1.8rem;
+    }
+    
+    .timer-display {
+        font-size: 3.5rem;
+    }
+
+    /* Make buttons easier to tap on mobile (Touch Targets) */
+    .btn {
+        padding: 12px 20px;
+        min-height: 48px;
+    }
 }
