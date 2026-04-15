@@ -62,7 +62,7 @@ function login() {
         message.style.color = "red";
         message.style.opacity = 1;
 
-        showAlert("Invalid Credentials!!"); // custom alert
+        showAlert("Sorry, you don’t have permission to continue!!"); // custom alert
 
         setTimeout(() => {
             message.style.opacity = 0;
